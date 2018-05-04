@@ -1,0 +1,9 @@
+install:
+  - '"C:\Program Files\Microsoft SDKs\Windows\v7.1\Bin\SetEnv.cmd" /x64'
+
+build_script:
+  - msbuild PlayspaceMover.sln
+
+#artifacts:
+#  - path: code_pages.exe
+#  - path: code_pages_result.log
