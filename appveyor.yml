@@ -4,6 +4,7 @@ install:
   - nuget restore
   - mkdir PlayspaceMover\third-party
   - git clone https://github.com/ValveSoftware/openvr PlayspaceMover\third-party\openvr
+  - git clone https://github.com/matzman666/OpenVR-InputEmulator.git PlayspaceMover\third-party\OpenVR-InputEmulator
 
 build_script:
   - msbuild PlayspaceMover.sln
