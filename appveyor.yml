@@ -11,8 +11,8 @@ install:
   - mkdir PlayspaceMover\third-party
   - git clone --depth 1 https://github.com/ValveSoftware/openvr PlayspaceMover\third-party\openvr
   - git clone --depth 1 https://github.com/matzman666/OpenVR-InputEmulator.git PlayspaceMover\third-party\OpenVR-InputEmulator
-  # TODO: Should be `branch=master` here instead of `branch=appveyor`, but it isn't on master yet.
-  - appveyor DownloadFile https://ci.appveyor.com/api/projects/trejkaz/OpenVR-InputEmulator/artifacts/lib_vrinputemulator%2FRelease%2FLibVRInputEmulator.zip?job=Configuration%3A+Release?branch=appveyor
+  # TODO: Should add `branch=master` but it isn't on master yet.
+  - appveyor DownloadFile https://ci.appveyor.com/api/projects/trejkaz/OpenVR-InputEmulator/artifacts/lib_vrinputemulator%2FRelease%2FLibVRInputEmulator.zip?job=Configuration%3A+Release
   - 7z x LibVRInputEmulator.zip -othird-party\VRInputEmulator *.cpp -r
 
 build_script:
