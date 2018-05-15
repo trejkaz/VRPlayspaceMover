@@ -13,8 +13,10 @@ install:
   - git clone --depth 1 https://github.com/matzman666/OpenVR-InputEmulator.git PlayspaceMover\third-party\OpenVR-InputEmulator
   # TODO: Should add `branch=master` but it isn't on master yet.
   # - curl -fsS -o LibVRInputEmulator.zip "https://ci.appveyor.com/api/projects/trejkaz/OpenVR-InputEmulator/artifacts/lib_vrinputemulator/Release/LibVRInputEmulator.zip?job=Configuration%%3A+%CONFIGURATION%"
-  - curl -fLv -o LibVRInputEmulator.zip "https://ci.appveyor.com/api/projects/trejkaz/OpenVR-InputEmulator/artifacts/lib_vrinputemulator%%%%2FRelease%%%%2FLibVRInputEmulator.zip?job=Configuration%%%%3A+%CONFIGURATION%"
+  #- curl -fLv -o LibVRInputEmulator.zip "https://ci.appveyor.com/api/projects/trejkaz/OpenVR-InputEmulator/artifacts/lib_vrinputemulator/%CONFIGURATION%/LibVRInputEmulator.zip?job=Configuration%%%%3A+%CONFIGURATION%"
+  - sh: 'curl -fLvG -o LibVRInputEmulator.zip "https://ci.appveyor.com/api/projects/trejkaz/OpenVR-InputEmulator/artifacts/lib_vrinputemulator/$CONFIGURATION/LibVRInputEmulator.zip" --data-urlencode "job=Configuration: $CONFIGURATION"'
   - 7z x LibVRInputEmulator.zip -othird-party\VRInputEmulator -r
+
 
 build_script:
   - msbuild /P:Configuration=%CONFIGURATION% /P:Platform=%PLATFORM% PlayspaceMover.sln
