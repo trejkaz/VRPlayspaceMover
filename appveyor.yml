@@ -15,8 +15,8 @@ install:
   # - curl -fsS -o LibVRInputEmulator.zip "https://ci.appveyor.com/api/projects/trejkaz/OpenVR-InputEmulator/artifacts/lib_vrinputemulator/Release/LibVRInputEmulator.zip?job=Configuration%%3A+%CONFIGURATION%"
   #- curl -fLv -o LibVRInputEmulator.zip "https://ci.appveyor.com/api/projects/trejkaz/OpenVR-InputEmulator/artifacts/lib_vrinputemulator/%CONFIGURATION%/LibVRInputEmulator.zip?job=Configuration%%%%3A+%CONFIGURATION%"
   - appveyor DownloadFile "https://ci.appveyor.com/api/projects/trejkaz/OpenVR-InputEmulator/artifacts/lib_vrinputemulator/%CONFIGURATION%/LibVRInputEmulator.zip?job=Configuration%%%%3A+%CONFIGURATION%"
-  - 7z x LibVRInputEmulator.zip -othird-party\VRInputEmulator -r
-
+  - 7z x LibVRInputEmulator.zip -oPlacespaceMover\third-party\VRInputEmulator -r
+  - dir /s PlacespaceMover\third-party\VRInputEmulator
 
 build_script:
   - msbuild /P:Configuration=%CONFIGURATION% /P:Platform=%PLATFORM% PlayspaceMover.sln
