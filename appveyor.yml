@@ -10,10 +10,11 @@ install:
   - nuget restore
   - mkdir PlayspaceMover\third-party
   - git clone --depth 1 https://github.com/ValveSoftware/openvr PlayspaceMover\third-party\openvr
+  - git clone --depth 1 https://github.com/g-truc/glm
   # TODO: Should add `branch=master` but it isn't on master yet.
   - appveyor DownloadFile "https://ci.appveyor.com/api/projects/trejkaz/OpenVR-InputEmulator/artifacts/lib_vrinputemulator/%CONFIGURATION%/LibVRInputEmulator.zip?job=Configuration%%%%3A+%CONFIGURATION%"
   - 7z x LibVRInputEmulator.zip -oPlayspaceMover\third-party\VRInputEmulator -r
-  - dir /s PlayspaceMover\third-party\VRInputEmulator
+  - dir /s PlayspaceMover\
 
 build_script:
   - msbuild /P:Configuration=%CONFIGURATION% /P:Platform=%PLATFORM% PlayspaceMover.sln
