@@ -75,16 +75,16 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>E:\PlayspaceMover\third-party\glm-0.9.9-a2;E:\PlayspaceMover\third-party\OculusSDK\LibOVR\Include;E:\PlayspaceMover\third-party\VRInputEmulator\include;E:\PlayspaceMover\third-party\openvr\headers;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\naelstrof\.nuget\packages\boost_date_time-vc141\1.66.0\lib\native;E:\PlayspaceMover\third-party\openvr\lib\win64;E:\PlayspaceMover\third-party\VRInputEmulator\lib\x64;E:\PlayspaceMover\third-party\OculusSDK\LibOVR\Lib\Windows\x64\Release\VS2015;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(MSBuildProjectDirectory)\third-party\glm-0.9.9-a2;$(MSBuildProjectDirectory)\third-party\OculusSDK\LibOVR\Include;$(MSBuildProjectDirectory)\third-party\VRInputEmulator\include;$(MSBuildProjectDirectory)\third-party\openvr\headers;$(IncludePath)</IncludePath>
+    <LibraryPath>$(HOMEDRIVE)$(HOMEPATH)\.nuget\packages\boost_date_time-vc141\1.66.0\lib\native;$(MSBuildProjectDirectory)\third-party\openvr\lib\win64;$(MSBuildProjectDirectory)\third-party\VRInputEmulator\Debug\lib\x64;$(MSBuildProjectDirectory)\third-party\OculusSDK\LibOVR\Lib\Windows\x64\Release\VS2015;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>E:\PlayspaceMover\third-party\glm-0.9.9-a2;E:\PlayspaceMover\third-party\OculusSDK\LibOVR\Include;E:\PlayspaceMover\third-party\VRInputEmulator\include;E:\PlayspaceMover\third-party\openvr\headers;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\naelstrof\.nuget\packages\boost_date_time-vc141\1.66.0\lib\native;E:\PlayspaceMover\third-party\openvr\lib\win64;E:\PlayspaceMover\third-party\VRInputEmulator\lib\x64;E:\PlayspaceMover\third-party\OculusSDK\LibOVR\Lib\Windows\x64\Release\VS2015;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(MSBuildProjectDirectory)\third-party\glm-0.9.9-a2;$(MSBuildProjectDirectory)\third-party\OculusSDK\LibOVR\Include;$(MSBuildProjectDirectory)\third-party\VRInputEmulator\include;$(MSBuildProjectDirectory)\third-party\openvr\headers;$(IncludePath)</IncludePath>
+    <LibraryPath>$(HOMEDRIVE)$(HOMEPATH)\.nuget\packages\boost_date_time-vc141\1.66.0\lib\native;$(MSBuildProjectDirectory)\third-party\openvr\lib\win64;$(MSBuildProjectDirectory)\third-party\VRInputEmulator\Release\lib\x64;$(MSBuildProjectDirectory)\third-party\OculusSDK\LibOVR\Lib\Windows\x64\Release\VS2015;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -113,7 +113,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>openvr_api.lib;libvrinputemulator-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>openvr_api.lib;libvrinputemulator.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
