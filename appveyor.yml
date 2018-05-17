@@ -11,20 +11,17 @@ install:
   - mkdir PlayspaceMover\third-party
 
   # OpenVR
-  - appveyor DownloadFile https://github.com/ValveSoftware/openvr/archive/v1.0.15.tar.gz -FileName openvr-1.0.15.tar.gz
-  - 7z x openvr-1.0.15.tar.gz
-  - 7z x openvr-1.0.15.tar -oPlayspaceMover\third-party
+  - appveyor DownloadFile https://github.com/ValveSoftware/openvr/archive/v1.0.15.zip -FileName openvr-1.0.15.zip
+  - 7z x openvr-1.0.15.zip -oPlayspaceMover\third-party
   - move PlayspaceMover\third-party\openvr-1.0.15 PlayspaceMover\third-party\openvr
 
   # GLM
-  - appveyor DownloadFile https://github.com/g-truc/glm/archive/0.9.9-a2.tar.gz -FileName glm-0.9.9-a2.tar.gz
-  - 7z x glm-0.9.9-a2.tar.gz
-  - 7z x glm-0.9.9-a2.tar -oPlayspaceMover\third-party
+  - appveyor DownloadFile https://github.com/g-truc/glm/archive/0.9.9-a2.zip -FileName glm-0.9.9-a2.zip
+  - 7z x glm-0.9.9-a2.zip -oPlayspaceMover\third-party
 
   # OpenVR Input Emulator
-  - appveyor DownloadFile https://github.com/matzman666/OpenVR-InputEmulator/archive/v1.3.tar.gz -FileName OpenVR-InputEmulator-1.3.tar.gz
-  - 7z x OpenVR-InputEmulator-1.3.tar.gz
-  - 7z x OpenVR-InputEmulator-1.3.tar -oPlayspaceMover\third-party
+  - appveyor DownloadFile https://github.com/matzman666/OpenVR-InputEmulator/archive/v1.3.zip -FileName OpenVR-InputEmulator-1.3.zip
+  - 7z x OpenVR-InputEmulator-1.3.zip -oPlayspaceMover\third-party
   - dir PlayspaceMover\third-party
   - move PlayspaceMover\third-party\OpenVR-InputEmulator-1.3 PlayspaceMover\third-party\OpenVR-InputEmulator
   - nuget install boost
