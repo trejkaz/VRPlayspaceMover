@@ -9,13 +9,18 @@ configuration:
 install:
   - nuget restore
   - mkdir PlayspaceMover\third-party
-  - git clone --depth 1 https://github.com/ValveSoftware/openvr PlayspaceMover\third-party\openvr
+  # OpenVR
   - appveyor DownloadFile https://github.com/ValveSoftware/openvr/archive/v1.0.15.zip -FileName openvr-1.0.15.tar.gz
-  - 7z x openvr-1.0.15.tar.gz -oPlayspaceMover\third-party\openvr
+  - 7z x openvr-1.0.15.tar.gz -oPlayspaceMover\third-party
+  - move PlayspaceMover\third-party\openvr-1.0.15 PlayspaceMover\third-party\openvr
+  # GLM
   - appveyor DownloadFile https://github.com/g-truc/glm/archive/0.9.9-a2.zip -FileName glm-0.9.9-a2.tar.gz
-  - 7z x glm-0.9.9-a2.tar.gz -oPlayspaceMover\third-party\glm-0.9.9-a2
-  - dir /s PlayspaceMover\third-party\glm-0.9.9-a2
-  - git clone --depth 1 --branch 0.9.9-a2 https://github.com/g-truc/glm PlayspaceMover\third-party\glm-0.9.9-a2
+  - 7z x glm-0.9.9-a2.tar.gz -oPlayspaceMover\third-party
+  # OpenVR Input Emulator
+  - appveyor DownloadFile https://github.com/matzman666/OpenVR-InputEmulator/archive/v1.3.tar.gz -FileName OpenVR-InputEmulator-1.3.tar.gz
+  - 7z x OpenVR-InputEmulator-1.3.tar.gz -oPlayspaceMover\third-party
+  - move PlayspaceMover\third-party\OpenVR-InputEmulator-1.3 PlayspaceMover\third-party\OpenVR-InputEmulator
+
   # TODO: Should add `branch=master` but it isn't on master yet.
   - appveyor DownloadFile "https://ci.appveyor.com/api/projects/trejkaz/OpenVR-InputEmulator/artifacts/LibVRInputEmulator-%CONFIGURATION%.zip?job=Configuration%%%%3A+%CONFIGURATION%"
   - 7z x LibVRInputEmulator-%CONFIGURATION%.zip -oPlayspaceMover\third-party\VRInputEmulator -r
